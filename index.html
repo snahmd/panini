@@ -9,7 +9,87 @@
   </head>
   <body>
     <div id="app"></div>
-    <h1>Panini</h1>
+    <h1 class="bg-slate-200 text-center p-2 border border-black">Panini</h1>
+    <form
+      action=""
+      id="panini_form"
+      class="border border-black flex flex-col m-4"
+    >
+      <input
+        class="border border-black"
+        type="text"
+        id="name"
+        name="name"
+        placeholder="First Name"
+      />
+      <input
+        class="border border-black"
+        type="text"
+        id="surname"
+        name="surname"
+        placeholder="Last Name"
+      />
+      <input
+        type="text"
+        class="border border-black"
+        id="stage_name"
+        name="stage_name"
+        placeholder="Stage Name"
+      />
+      <input
+        class="border border-black"
+        type="number"
+        id="albums"
+        name="albums"
+        placeholder="How many albums?"
+      />
+      <input
+        class="border border-black"
+        type="number"
+        id="top"
+        name="top"
+        placeholder="How many top 10 Singles?"
+      />
+      <input
+        class="border border-black"
+        type="number"
+        id="net_worth"
+        name="net_worth"
+        placeholder="Net worth in EUR"
+      />
+      <input
+        class="border border-black"
+        type="number"
+        id="old"
+        name="old"
+        placeholder="How old is this person?"
+      />
+      <textarea
+        name="quote"
+        id="quote"
+        cols="30"
+        rows="10"
+        placeholder="A famous quote by this person"
+      ></textarea>
+      <!-- Image Url -->
+      <input
+        class="border border-black"
+        type="text"
+        id="image_url"
+        name="image_url"
+        placeholder="Image URL"
+      />
+
+      <button
+        class="border border-black bg-slate-200 p-2"
+        id="submit_btn"
+        name="submit_btn"
+        type="submit"
+      >
+        Add
+      </button>
+    </form>
+
     <script type="module" src="/src/panini.ts"></script>
   </body>
 </html>
