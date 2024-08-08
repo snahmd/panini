@@ -59,5 +59,22 @@ paniniForm.addEventListener("submit", (event) => {
   console.log(newPaniniVariable);
   paniniList.push(newPaniniVariable);
   console.log(paniniList);
+  showPanini(newPaniniVariable);
   paniniForm.reset();
 });
+
+// * 5. Panini in HTML ausgeben mit Funktion
+function showPanini(panini: PaniniSchema) {
+  const paniniElement = document.createElement("div");
+  paniniElement.innerHTML = `
+  <h1>${panini.name} | ${panini.surname}</h1>
+  <h2>Stage Name: ${panini.stage_name}</h2>
+  <img src="${panini.url}" alt="${panini.stage_name}">
+  <p>TextArea: ${panini.textarea}</p>
+  <p>Albums: ${panini.albums}</p>
+  <p>Top: ${panini.top}</p>
+  <p>Net Worth: ${panini.net_worth}</p>
+  <p>Old: ${panini.old}</p>
+  `;
+  paniniOutput.appendChild(paniniElement);
+}
