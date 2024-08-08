@@ -30,3 +30,34 @@ const oldInput = document.getElementById("old") as HTMLInputElement;
 const textareaInput = document.getElementById("quote") as HTMLTextAreaElement;
 const urlInput = document.getElementById("image_url") as HTMLInputElement;
 const submitButton = document.getElementById("submit_btn") as HTMLButtonElement;
+
+const paniniOutput = document.getElementById("output") as HTMLDivElement;
+
+// * 4. createPanini Funktion anlegen
+function createPanini(): PaniniSchema {
+  console.log("ein neue Panini wird erstellt");
+  const newPanini: PaniniSchema = {
+    name: nameInput.value,
+    surname: surnameInput.value,
+    stage_name: stageNameInput.value,
+    albums: parseInt(albumsInput.value),
+    top: parseInt(topInput.value),
+    net_worth: parseInt(netWorthInput.value),
+    old: parseInt(oldInput.value),
+    textarea: textareaInput.value,
+    url: urlInput.value,
+    id: paniniList.length + 1,
+  };
+  return newPanini;
+}
+
+// * 4. paniniForm EventListener hinzufügen
+paniniForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log("Form was submitted");
+  const newPaniniVariable = createPanini();
+  console.log(newPaniniVariable);
+  paniniList.push(newPaniniVariable);
+  console.log(paniniList);
+  paniniForm.reset();
+});
